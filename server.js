@@ -1,6 +1,8 @@
+// import express
 const express = require("express");
-const path = require("path");
-// route
+
+// routes
+const html = require("./routes/html");
 const api = require("./routes/api");
 
 // use port from heroku or 3001
@@ -13,21 +15,7 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/api", api);
-
-// get notes.html
-app.get("/notes", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/notes.html"));
-});
-
-// read and display notes from db.json
-app.get("/api/notes", (req, res) => {
-  res.sendFile(path.join(__dirname, "db/db.json"));
-});
-
-// get index.html
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/index.html"));
-});
+app.use("/", html);
 
 app.listen(PORT, () =>
   console.log(`Example app listening at http://localhost:${PORT}`)
