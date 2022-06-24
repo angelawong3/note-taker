@@ -17,6 +17,4 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api", api);
 app.use("/", html);
 
-app.listen(PORT, () =>
-  console.log(`Example app listening at http://localhost:${PORT}`)
-);
+app.listen(PORT, () => console.log(`Listening at http://localhost:${PORT}`));
