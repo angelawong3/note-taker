@@ -2,7 +2,6 @@ const api = require("express").Router();
 const path = require("path");
 const fs = require("fs");
 const { v4: uuidv4 } = require("uuid");
-let newId = uuidv4();
 
 // read and display notes from db.json
 api.get("/notes", (req, res) => {
@@ -15,7 +14,8 @@ api.post("/notes", (req, res) => {
   let noteList = JSON.parse(fs.readFileSync("./db/db.json"));
 
   // assign uuid to each json object
-  newNote.id = newId;
+  newNote.id = uuidv4();
+
   //push updated note to file
   noteList.push(newNote);
 
@@ -23,10 +23,10 @@ api.post("/notes", (req, res) => {
   res.json(noteList);
 });
 
-// del note with matching id
 api.delete("/notes/:id", (req, res) => {
   let noteList = JSON.parse(fs.readFileSync("./db/db.json"));
-  let deleteNote = noteList.filter((item) => item.id !== req.params.id);
+  // del note with matching id
+  let deleteNote = noteList.filter((selected) => selected.id !== req.params.id);
 
   // update note list
   fs.writeFileSync("./db/db.json", JSON.stringify(deleteNote));
