@@ -29,7 +29,7 @@ api.delete("/notes/:id", (req, res) => {
   let noteId = req.params.id.toString();
 
   noteList = noteList.filter((selected) => {
-    return selected.id != noteId;
+    return selected.id !== noteId;
   });
 
   // update note list
