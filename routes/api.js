@@ -12,7 +12,7 @@ api.get("/notes", (req, res) => {
 // create new note and add to file
 api.post("/notes", (req, res) => {
   let newNote = req.body;
-  let noteList = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
+  let noteList = JSON.parse(fs.readFileSync("./db/db.json"));
 
   // assign uuid to each json object
   newNote.id = newId;
@@ -25,7 +25,7 @@ api.post("/notes", (req, res) => {
 
 // del note with matching id
 api.delete("/notes/:id", (req, res) => {
-  let noteList = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
+  let noteList = JSON.parse(fs.readFileSync("./db/db.json"));
   let noteId = req.params.id.toString();
 
   noteList = noteList.filter((selected) => {
