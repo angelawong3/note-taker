@@ -5,8 +5,9 @@
 ## Table of Contents
 
 - [Description](#description)
+- [Installation](#installation)
 - [Usage](#usage)
-- [Screenshot](#screenshot)
+- [Screenshots](#screenshots)
 - [Teachologies Used](#technologies-used)
 - [Link](#link)
 - [License](#license)
@@ -14,24 +15,39 @@
 
 ### Description
 
-A team profile generator which enable users to quickly create a webpage that displays a team's basic info.
+An app for users to write, save, and delete notes.
+
+### Installation
+
+```
+git clone git@github.com:angelawong3/note-taker.git
+cd note-taker
+npm install express
+npm install uuid
+```
 
 ### Usage
 
 ```
-
+node server.js
+or
+npm run start
 ```
 
-### Screenshot
+### Screenshots
 
-![screenshot](/dist/assets/img/gen-ed-html.png)
+![screenshot1](/public/assets/img/UI.png)
+Users may write, save, and delete notes using the note taker.
+![screenshot2](/public/assets/img/notes.png)
 
 ### Technologies Used
 
-1. JavaScript
-2. Node.js
-3. Express.js
-4. Heroku
+1. HTML
+2. CSS
+3. JavaScript
+4. Node.js
+   - Express.js
+   - UUID
 
 ### Link:
 
