@@ -26,15 +26,11 @@ api.post("/notes", (req, res) => {
 // del note with matching id
 api.delete("/notes/:id", (req, res) => {
   let noteList = JSON.parse(fs.readFileSync("./db/db.json"));
-  let noteId = req.params.id.toString();
-
-  noteList = noteList.filter((selected) => {
-    return selected.id !== noteId;
-  });
+  let deleteNote = noteList.filter((item) => item.id !== req.params.id);
 
   // update note list
-  fs.writeFileSync("./db/db.json", JSON.stringify(noteList));
-  res.json(noteList);
+  fs.writeFileSync("./db/db.json", JSON.stringify(deleteNote));
+  res.json(deleteNote);
 });
 
 module.exports = api;
