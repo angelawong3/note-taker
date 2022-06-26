@@ -51,7 +51,7 @@ Users may write, save, and delete notes using the note taker.
 
 ### Link:
 
-Click [https://mighty-tor-72940.herokuapp.com](https://mighty-tor-72940.herokuapp.com) to go to the page.
+Click [https://mighty-tor-72940.herokuapp.com](https://mighty-tor-72940.herokuapp.com) to go to the app.
 
 ### License
 
